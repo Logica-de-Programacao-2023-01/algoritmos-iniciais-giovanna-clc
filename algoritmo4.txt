@@ -1,3 +1,10 @@
 Algoritmo de cálculo de fatorial: um algoritmo que calcula o fatorial de um número, ou seja, o produto de todos os números inteiros de 1 até aquele número
 
-
+1: Leia n
+Produto entre os números que antecedem n e n
+Tal que produto entre 1 até n
+2: Produto n por cada número que o antecede até 1 (um)
+Tal que P (fatorial de n) = Pn = n! = n # (n-1) # (n-2) ...
+3: Escreva resultado da multiplicação
+Fim-se
+Fim
