@@ -1,0 +1,322 @@
+//Exercício 01//
+
+package main
+
+import "fmt"
+
+func main() {
+    var num1, num2, soma int
+
+    fmt.Println("Digite o primeiro número:")
+    fmt.Scanln(&num1)
+
+    fmt.Println("Digite o segundo número:")
+    fmt.Scanln(&num2)
+
+    soma = num1 + num2
+
+    fmt.Println("A soma dos dois números é:", soma)
+}
+
+//Exercício 02//
+
+package main
+
+import "fmt"
+
+func main() {
+	var temperatura float64
+	var opcao int
+
+	// Solicitar a temperatura como entrada
+	fmt.Println("Digite a temperatura:")
+	fmt.Scanln(&temperatura)
+
+	// Solicitar a opção de conversão
+	fmt.Println("Escolha a opção de conversão:")
+	fmt.Println("1 - Celsius para Fahrenheit")
+	fmt.Println("2 - Fahrenheit para Celsius")
+	fmt.Scanln(&opcao)
+
+	// Verificar a opção escolhida e realizar a conversão
+	var temperaturaConvertida float64
+
+	if opcao == 1 {
+		// Celsius para Fahrenheit: F = C * 9/5 + 32
+		temperaturaConvertida = temperatura*9/5 + 32
+	} else if opcao == 2 {
+		// Fahrenheit para Celsius: C = (F - 32) * 5/9
+		temperaturaConvertida = (temperatura - 32) * 5/9
+	} else {
+		// Opção inválida
+		fmt.Println("Opção inválida.")
+		return
+	}
+
+	// Exibir o resultado da conversão
+	fmt.Println("A temperatura convertida é:", temperaturaConvertida)
+}
+
+//Exercício 03//
+
+package main
+
+import "fmt"
+
+func main() {
+	var quantidade int
+	var numeros []float64
+
+	// Solicitar a quantidade de números como entrada
+	fmt.Println("Digite a quantidade de números:")
+	fmt.Scanln(&quantidade)
+
+	// Solicitar os números como entrada
+	for i := 0; i < quantidade; i++ {
+		var numero float64
+		fmt.Printf("Digite o número %d: ", i+1)
+		fmt.Scanln(&numero)
+		numeros = append(numeros, numero)
+	}
+
+	// Calcular a média
+	var soma float64
+	for _, numero := range numeros {
+		soma += numero
+	}
+	media := soma / float64(quantidade)
+
+	// Exibir o resultado da média
+	fmt.Println("A média dos números é:", media)
+}
+
+//Exercício 04//
+
+package main
+
+import "fmt"
+
+func main() {
+	var numero int
+
+	// Solicitar o número como entrada
+	fmt.Println("Digite um número:")
+	fmt.Scanln(&numero)
+
+	// Calcular o fatorial
+	fatorial := 1
+	for i := 1; i <= numero; i++ {
+		fatorial *= i
+	}
+
+	// Exibir o resultado do fatorial
+	fmt.Println("O fatorial de", numero, "é:", fatorial)
+}
+
+//Exercício 05//
+
+package main
+
+import "fmt"
+
+func buscaLinear(lista []int, elemento int) bool {
+	for _, num := range lista {
+		if num == elemento {
+			return true
+		}
+	}
+	return false
+}
+
+func main() {
+	lista := []int{4, 2, 7, 1, 9, 5}
+	elemento := 7
+
+	// Realizar a busca linear
+	encontrado := buscaLinear(lista, elemento)
+
+	// Exibir o resultado da busca
+	if encontrado {
+		fmt.Println("O elemento", elemento, "foi encontrado na lista.")
+	} else {
+		fmt.Println("O elemento", elemento, "não foi encontrado na lista.")
+	}
+}
+
+//Exercício 06//
+
+package main
+
+import "fmt"
+
+func calcularPotencia(base, expoente int) int {
+	potencia := 1
+
+	for i := 0; i < expoente; i++ {
+		potencia *= base
+	}
+
+	return potencia
+}
+
+func main() {
+	var base, expoente int
+
+	// Solicitar a base e o expoente como entrada
+	fmt.Println("Digite a base:")
+	fmt.Scanln(&base)
+
+	fmt.Println("Digite o expoente:")
+	fmt.Scanln(&expoente)
+
+	// Calcular a potência
+	resultado := calcularPotencia(base, expoente)
+
+	// Exibir o resultado da potência
+	fmt.Printf("%d elevado a %d é igual a %d\n", base, expoente, resultado)
+}
+
+//Exercício 07//
+
+package main
+
+import "fmt"
+
+func verificarPrimo(numero int) bool {
+	if numero <= 1 {
+		return false
+	}
+
+	for i := 2; i*i <= numero; i++ {
+		if numero%i == 0 {
+			return false
+		}
+	}
+
+	return true
+}
+
+func main() {
+	var numero int
+
+	// Solicitar o número como entrada
+	fmt.Println("Digite um número:")
+	fmt.Scanln(&numero)
+
+	// Verificar se o número é primo
+	primo := verificarPrimo(numero)
+
+	// Exibir o resultado da verificação
+	if primo {
+		fmt.Println("O número", numero, "é primo.")
+	} else {
+		fmt.Println("O número", numero, "não é primo.")
+	}
+}
+
+//Exercício 08//
+
+package main
+
+import "fmt"
+
+func calcularAreaTriangulo(base, altura float64) float64 {
+	area := (base * altura) / 2
+	return area
+}
+
+func main() {
+	var base, altura float64
+
+	// Solicitar a base e altura como entrada
+	fmt.Println("Digite a base do triângulo:")
+	fmt.Scanln(&base)
+
+	fmt.Println("Digite a altura do triângulo:")
+	fmt.Scanln(&altura)
+
+	// Calcular a área do triângulo
+	area := calcularAreaTriangulo(base, altura)
+
+	// Exibir o resultado da área
+	fmt.Println("A área do triângulo é:", area)
+}
+
+//Exercício 09//
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func calcularMontante(principal, taxa, tempo float64) float64 {
+	montante := principal * math.Pow(1+(taxa/100), tempo)
+	return montante
+}
+
+func main() {
+	var principal, taxa, tempo float64
+
+	// Solicitar o principal, taxa e tempo como entrada
+	fmt.Println("Digite o valor principal:")
+	fmt.Scanln(&principal)
+
+	fmt.Println("Digite a taxa de juros (em porcentagem):")
+	fmt.Scanln(&taxa)
+
+	fmt.Println("Digite o tempo em anos:")
+	fmt.Scanln(&tempo)
+
+	// Calcular o montante com juros compostos
+	montante := calcularMontante(principal, taxa, tempo)
+
+	// Exibir o resultado do montante
+	fmt.Printf("O montante após %.2f anos é: %.2f\n", tempo, montante)
+}
+
+//Exercício 10//
+
+package main
+
+import "fmt"
+
+func calcularMediaPonderada(notas []float64, pesos []float64) float64 {
+	soma := 0.0
+	somaPesos := 0.0
+
+	for i := 0; i < len(notas); i++ {
+		soma += notas[i] * pesos[i]
+		somaPesos += pesos[i]
+	}
+
+	mediaPonderada := soma / somaPesos
+	return mediaPonderada
+}
+
+func main() {
+	var quantidade int
+
+	// Solicitar a quantidade de notas e pesos como entrada
+	fmt.Println("Digite a quantidade de notas:")
+	fmt.Scanln(&quantidade)
+
+	notas := make([]float64, quantidade)
+	pesos := make([]float64, quantidade)
+
+	// Solicitar as notas e pesos como entrada
+	for i := 0; i < quantidade; i++ {
+		fmt.Printf("Digite a nota %d: ", i+1)
+		fmt.Scanln(&notas[i])
+
+		fmt.Printf("Digite o peso da nota %d: ", i+1)
+		fmt.Scanln(&pesos[i])
+	}
+
+	// Calcular a média ponderada
+	media := calcularMediaPonderada(notas, pesos)
+
+	// Exibir o resultado da média ponderada
+	fmt.Println("A média ponderada é:", media)
+}
