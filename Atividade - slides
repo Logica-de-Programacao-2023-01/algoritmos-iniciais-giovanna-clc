@@ -1,0 +1,104 @@
+//Exercício 01// 
+
+package main
+
+import "fmt"
+
+func main() {
+  var nome string
+  fmt.Print("Qual é seu nome?")
+  fmt.Scan(&nome)
+  fmt.Println("Olá,", nome)
+
+
+  var idade string
+  fmt.Print("Qual é sua idade em anos?")
+  fmt.Scan(&idade)
+  fmt.Println("Oi", nome, ", você tem", idade, "anos")
+
+
+  var peso string
+  fmt.Print("Qual é seu peso, em quilogramas?")
+  fmt.Scan(&peso)
+  fmt.Println("Você me informou que tem", peso, "quilogramas de peso")
+}
+
+//Exercício 02//
+
+package main
+
+import "fmt"
+
+func main() {
+  var x float64
+  fmt.Print("Qual é o valor da base do treiângulo, em metros?")
+  fmt.Scan(&x)
+  var y float64
+  fmt.Print("Qual é o valor da altura do triângulo, em metros?")
+  fmt.Scan(&y)
+  fmt.Println("A área do triângulo é", (x+y)/2)
+}
+
+//Exercício 03//
+
+package main
+
+import "fmt"
+
+func main() {
+  var x float64
+  fmt.Print("Qual é o valor da base da caixa, em metros?")
+  fmt.Scan(&x)
+  var y float64
+  fmt.Print("Qual é o valor da altura da caixa, em metros?")
+  fmt.Scan(&y)
+  var z float64
+  fmt.Print("Qual é o valor da profundidade da caixa, em metros?")
+  fmt.Scan(&z)
+  fmt.Println("O volume da caixa é", x*y*z)
+}
+
+//Exercício 04//
+
+package main
+
+import "fmt"
+
+func main() {
+  var x float64
+  fmt.Print("Qual é o valor do primeiro número?")
+  fmt.Scan(&x)
+  var y float64
+  fmt.Print("Qual é o valor do segundo número??")
+  fmt.Scan(&y)
+  var z float64
+  fmt.Print("Qual é o valor do terceiro número?")
+  fmt.Scan(&z)
+  var w float64
+  fmt.Print("Qual é o valor do quarto número?")
+  fmt.Scan(&w)
+  fmt.Println("A média aritmética dos números informados é de", (x+y+z+w)/4)
+}
+
+//Exercício 05//
+
+package main
+
+import "fmt"
+
+func main() {
+  var x float64
+  fmt.Print("Responda 1 se seu número está em dólar ou 0 se está em real")
+  fmt.Scan(&x)
+  if x == 1 {
+     var y float64
+     fmt.Print("Qual é o valor?")
+     fmt.Scan(&y)
+     fmt.Println("O seu valor é de", y*4.96, "reais")
+  } else if x == 0 {
+     var z float64
+     fmt.Print("Qual é o valor?")
+     fmt.Scan(&z)
+     fmt.Println("O seu valor é de", z*0.20, "dólares")
+  }
+}
